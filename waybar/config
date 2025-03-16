@@ -1,0 +1,148 @@
+{
+    //"position": "top",
+    "height": 35,
+    "width": 1200,
+    "spacing": 0,
+    "margin-top": 7,
+    "output": "eDP-1",
+    
+    "modules-left": [
+        "clock",
+        "backlight",
+        "pulseaudio",
+        "hyprland/language",
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "temperature",
+        "custom/weather",
+        "battery",
+        "bluetooth",
+        "custom/logout",
+    ],
+    
+    "pulseaudio": {
+        "max-volume" : 150,
+        "format": "{icon}  {volume}%",
+        "format-muted": "   {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "headset": " ",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": " "
+        },
+        "on-click": "GTK_THEME=Juno GSK_RENDERER=gl pavucontrol"
+    },
+
+    "backlight": {
+		"tooltip": false,
+		"format": "󰃟  {}%",
+		"interval":60,
+	},
+
+    "bluetooth": {
+        "format-on": " ",
+        "format-off" : "󰂲 ",
+        "format-disabled" : "󰂲 ",
+        "format-connected" : " ",
+        "on-click": "blueberry",
+        "tooltip-format": "{num_connections} connected",
+        "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%"
+    },
+
+    "custom/logout": {
+        "tooltip": false,
+        "format": " ",
+        "on-click": "wlogout",
+        "interval": "once",
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 300,
+        "exec": "python .config/waybar/weather.py",
+        "return-type": "json"
+    },
+
+    "clock": {
+     "tooltip-format": "<tt><big>{calendar}</big></tt>",
+     "format": "{:%d  %B  %H:%M}",
+     "format-alt": "{:%d  %B  %H:%M}",
+"calendar": {
+		"mode"          : "month",
+		"mode-mon-col"  : 1,
+		"weeks-pos"     : "right",
+		"on-scroll"     : 1,
+		"on-click-right": "mode",
+		"format": {
+			"months":     "<span color='#f2f3f4'><b>{}</b></span>",
+			"days":       "<span color='#f2f3f4'><b>{}</b></span>",
+			"weeks":      "<span color='#6d7bf7'><b>{}</b></span>",
+			"weekdays":   "<span color='#6d7bf7'><b>{}</b></span>",
+			"today":      "<span color='#ff6699'><b>{}</b></span>"
+		}
+	},
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 15
+    },
+
+    "hyprland/workspaces": {
+        "show-special": true,
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        },
+        "tooltip": false,
+    },
+
+    "cpu": {
+        "format": "\uf4bc {usage}%",
+        "interval": 10
+    },
+
+    "memory": {
+        "format": "\uefc5{: >3} %",
+        "interval": 10
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C",
+        "interval": 10
+    },
+    
+    "battery": {
+        "interval":60,
+        "states": {
+            "warn": 20,
+            "crit": 10 
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󱐋 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{power}W",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+   	"hyprland/language": {
+		"format": "  {}",
+		"format-en": "EN",
+		"format-ru": "RU",
+	},
+      
+}
+

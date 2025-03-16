@@ -1,0 +1,15 @@
+{
+    "label" : "lock",
+    "action" : "loginctl lock-session",
+    "keybind" : "l"
+}
+{
+    "label" : "shutdown",
+    "action" : "poweroff",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "reboot",
+    "keybind" : "r"
+}

@@ -1,0 +1,15 @@
+
+columns=1
+
+no_actions=true
+hide_scroll=true
+
+matching=contains
+prompt=
+term=foot
+
+width=500
+height=500
+
+allow_images=true
+insensitive=false
