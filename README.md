@@ -8,4 +8,5 @@
 |wofi|app launcher|
 |foot|terminal|
 |swaync|notifications|
+|Juno|gtk theme|
 
